@@ -67,4 +67,4 @@ SELECT * FROM posts;
 Use code with caution. Learn more
 This will delete the user with the ID of 1, but their posts will remain in the database with their user_id set to NULL.
 
-I hope this helps! Let me know if you have any other questions.
+I hope this helps! Let me know if you have any other questions!
