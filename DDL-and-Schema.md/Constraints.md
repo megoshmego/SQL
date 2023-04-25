@@ -324,4 +324,4 @@ So that's next,
 6:01
 and then we'll focus on select.
 6:02
-(upbeat music)
+(upbeat music).
