@@ -1,108 +1,41 @@
-thank you. would you include any scripts for demos you think might be helpful? 
+Sure. Here are the key terms, concepts, and any other relevant information and definitions from the transcript you provided:
 
+Title: Null
+Section: SQL
+Subsection: DDL and Schema
+Key Terms
 
+Null
+IS NULL
+Default value
+Constraint
+Unique constraint
+Concepts
 
+Null is a special value in SQL that represents no value, the lack of a value, or an unknown value.
+The IS NULL operator is used to test if a value is null.
+A default value is a value that is automatically assigned to a column if no other value is specified.
+A constraint is a rule that restricts the values that can be stored in a column or table.
+A unique constraint ensures that each row in a table has a unique value for a particular column.
+Demos
 
+Here is a demo of how to use the IS NULL operator to test if a value is null:
 
+SQL
+SELECT * FROM subreddits WHERE name IS NULL;
+Use code with caution. Learn more
+This query will return all of the rows in the subreddits table where the name column is null.
 
+Here is a demo of how to create a default value for a column:
 
+SQL
+ALTER TABLE subreddits ALTER COLUMN name SET DEFAULT 'default_value';
+Use code with caution. Learn more
+This will change the name column so that it automatically gets the value default_value if no other value is specified.
 
-will you please evaluate the following script for the key terms, concepts, and any other relevant information and definitions and include the title of the video "Null", and the section of the course "SQL", and subsection "DDL and Schema", as well as any demos you think would helpful to me?:
+Here is a demo of how to create a unique constraint:
 
-
-0:00
-(gentle music)
-0:04
-- [Instructor] Next up, let's talk
-0:05
-about the concept of null in Postgres.
-0:08
-So null is a special value in SQL,
-0:11
-and it means something is blank or unknown.
-0:14
-So it's the lack of a value for a given column,
-0:17
-which is very different than zero or an empty string.
-0:22
-We've been seeing null,
-0:23
-I'm doing air quotes around seeing, when we create rows
-0:26
-in a table and we are leaving certain fields blank.
-0:30
-So if I SELECT * FROM my subreddits table,
-0:34
-we have a name column, we have chickenpics and cats,
-0:37
-but then we have two subreddits that do not have any name,
-0:41
-so their name is not set to empty string,
-0:44
-their name is null.
-0:46
-The unfortunate thing is that if we wanted to try
-0:48
-and select based off of that,
-0:50
-so SELECT * FROM subreddits
-0:54
-WHERE name = NULL,
-0:58
-it's not gonna work for us.
-0:59
-Instead, we need to use a special syntax IS NULL.
-1:03
-So SELECT * FROM subreddits
-1:07
-WHERE name IS NULL.
-1:11
-And now we get the two columns where there is no name.
-1:15
-So again, that's different than an empty string,
-1:17
-that's different than zero for subscribers.
-1:20
-Null is the lack of a value, an unknown value
-1:23
-for a given column.
-1:25
-Usually we want to avoid null.
-1:28
-Sometimes it's all right to have, but a lot
-1:30
-of the time we either want a default value
-1:33
-or we wanna force a row to contain a value for that column.
-1:37
-So you must provide a subreddit name.
-1:40
-If you're trying to make a subreddit,
-1:41
-we're storing subreddits for Reddit,
-1:44
-it doesn't make sense to have an empty name.
-1:46
-So in the next video, we'll talk
-1:48
-about constraints and how we can require different fields.
-1:51
-And we'll also see additional constraints,
-1:54
-like making things unique.
-1:56
-You must make a unique subreddit name,
-1:58
-we can't have a duplicate.
-2:00
-So that's coming up next.
-2:01
-This was a very quick video on null,
-2:03
-which is a special value in SQL
-2:05
-that represents no value,
-2:07
-the lack of a value or an unknown value.
-2:10
-(gentle music)
+SQL
+ALTER TABLE subreddits ADD CONSTRAINT unique_subreddit_name UNIQUE (name);
+Use code with caution. Learn more
+This will create a unique constraint on the name column, which ensures that each row in the subreddits table has a unique value for the name column.
