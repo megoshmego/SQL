@@ -1,4 +1,4 @@
-Sure, here are the key terms, concepts, and any other relevant information and definitions for the script you provided:
+Sure, here are the key terms, concepts, and any other relevant information and definitions for the script you provided::
 
 Title: ALTER TABLE
 Section: SQL
